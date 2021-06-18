@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-title>Despesas</ion-title>
+
+    <ion-thumbnail class="ion-margin-end" slot="end" *ngIf="auth.user | async as user">
+      <img routerLink="/user/profile" src="{{ user.photoURL }}" alt="{{ user.displayName }}">
+    </ion-thumbnail>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+  
+  <h1 class="centralizar">Custos de casa</h1>
+  <p class="p1" >Valor do Aluguel: <input [(ngModel)]="v1" type="text" placeholder="Insira o valor" [ngModel]="testPrice | currency : 'BRL'"></p>
+  <p class="p1" >Luz: <input [(ngModel)]="v2" type="text" placeholder="Insira o valor" [ngModel]="testPrice | currency : 'BRL'"></p>
+    <p class="p1" >Água: <input [(ngModel)]="v3" type="text" placeholder="Insira o valor" [ngModel]="testPrice | currency : 'BRL'"></p>
+    <p class="p1" >Internet: <input [(ngModel)]="v4" type="text" placeholder="Insira o valor" [ngModel]="testPrice | currency : 'BRL'"></p>
+    <p class="p1" >Alimentação: <input [(ngModel)]="v5" type="text" placeholder="Insira o valor" [ngModel]="testPrice | currency : 'BRL'"></p>
+    <p class="p1" >Telefone: <input [(ngModel)]="v6" type="text" placeholder="Insira o valor" [ngModel]="testPrice | currency : 'BRL'"></p>
+  <p class="r1">O Resultado é: {{ +v1 + +v2 + +v3 + +v5 + +v6 | currency : 'BRL'}}</p>  
+
+  <p>LEMBRE DE PEGAR E IMPORTAR OS CHARTS(GRÁFICOS)(Pesquisar Charts Angular e Ionic)</p>
+  
+</ion-content>

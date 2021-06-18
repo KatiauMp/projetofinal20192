@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="centralizar">Sobre</ion-title>
+  </ion-toolbar>
+</ion-header>
+<h1 class="t1" >Controle Financeiro</h1>
+<ion-content>
+<ion-img src="/assets/icon/controlefinanceiroicon.png"></ion-img>
+<div>
+<p class="p1">Nosso aplicativo tem como objetivo facilitar o controle financeiro oferecendo ajuda com ferramentas que tornam o cálculo mais prático sendo apenas necessário preencher os campos com as informações que você quer.
+</p>
+<br>
+<br>
+</div>
+<div class="caixacolorida2">
+  <br>
+<p class="p1">Como por exemplo abaixo você pode calcular seu aluguel de acordo com o número de meses:</p>
+  <br>   
+    <p class="p1" >Valor do Aluguel: <input [(ngModel)]="num1" type="text" placeholder="Insira o valor" [ngModel]="testPrice | currency : 'BRL'"></p>
+    <p class="p1" >Número de meses:  <input [(ngModel)]="num2" placeholder="Insira o valor" [ngModel]="testPrice | currency : 'BRL'"></p>
+    <p class="r1">O Resultado é: {{ +num1 * +num2 | currency : 'BRL'}}</p>
+    <br>
+
+</div>
+</ion-content>
