@@ -17,15 +17,17 @@
 <ion-content class="ion-padding-horizontal">
   <div id="caixadodespesas">
     <br>
-  <h1 class="centralizar">Custos de casa</h1>
-  <p class="p1" ><input [(ngModel)]="v1" type="text" placeholder="Telefone" [ngModel]="testPrice | currency : 'BRL'"></p>
-  <p class="p1" ><input [(ngModel)]="v2" type="text" placeholder="Luz" [ngModel]="testPrice | currency : 'BRL'"></p>
-  <p class="p1" ><input [(ngModel)]="v3" type="text" placeholder="Água" [ngModel]="testPrice | currency : 'BRL'"></p>
-  <p class="p1" ><input [(ngModel)]="v4" type="text" placeholder="Internet" [ngModel]="testPrice | currency : 'BRL'"></p>
-  <p class="p1" ><input [(ngModel)]="v5" type="text" placeholder="Alimentação" [ngModel]="testPrice | currency : 'BRL'"></p>
-  <p class="p1" >O Resultado é: {{ +v1 + +v2 + +v3 + +v5 | currency : 'BRL'}}</p>  
-  <button class="calcular1" (click)="addData(doughnutChart, 'teste', v1)">Calcular</button>
+  <p class="p1" ><input [(ngModel)]="v1" type="number" placeholder="Telefone" ></p>
+  <p class="p1" ><input [(ngModel)]="v2" type="number" placeholder="Luz" ></p>
+  <p class="p1" ><input [(ngModel)]="v3" type="number" placeholder="Água" ></p>
+  <p class="p1" ><input [(ngModel)]="v4" type="number" placeholder="Internet" ></p>
+  <p class="p2" >O Resultado é: {{ +v1 + +v2 + +v3 + +v4 | currency : 'BRL'}}</p> 
   </div>
-<canvas color="black" #doughnutCanvas style="position: relative; height:20px; width:40px"></canvas>
-  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<canvas class="canvas" color="black" #doughnutCanvas></canvas>
+  <div id="espaçobrancoembaixo"></div>
 </ion-content>

@@ -6,10 +6,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import { registerables } from 'chart.js';
-
 Chart.register(...registerables);
-
 //CHARTS
+//rxjs
+import { interval } from 'rxjs';
+//rxjs
 
 @Component({
   selector: 'app-content',
@@ -22,12 +23,11 @@ export class ContentPage implements OnInit {
   v2: number;
   v3: number;
   v4: number;
-  v5: number;
-  resultado: number;
+
   @ViewChild('doughnutCanvas') private doughnutCanvas: ElementRef;
 
   
-  doughnutChart: any;
+  doughnutChart: Chart;
   
 
   constructor(
@@ -35,12 +35,14 @@ export class ContentPage implements OnInit {
     private menuCtrl: MenuController
   ) { }
   ngAfterViewInit() {
-    this.doughnutChartMethod();   
+    this.doughnutChartMethod();  
   }
 
   ngOnInit() {
-    this.menuCtrl.enable(true);
-    
+  this.menuCtrl.enable(true);   
+  interval(1000).subscribe(x => {
+  this.Atualizar();
+});
   }
 
 // Charts(Gráficos)
@@ -49,39 +51,33 @@ doughnutChartMethod() {
   this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
     type: 'doughnut',
     data: {
-      labels: ['Alimentação', 'Luz', 'Água', 'Internet', 'Telefone'],
+      labels: ['Alimentação', 'Luz', 'Água', 'Internet'],
       datasets: [{
         label: '# of Votes',
-        data: [ this.v1, this.v2, this.v3, this.v4, this.v5],
+        data: [ this.v1, this.v2, this.v3, this.v4],
         backgroundColor: [
-          'rgba(255, 159, 64, 0.2)',
+          'rgba(20, 100, 100, 0.2)',
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)'
         ],
         hoverBackgroundColor: [
           '#FFCE56',
           '#FF6384',
           '#36A2EB',
           '#FFCE56',
-          '#FF6384'
         ]
       }]
     }
   });
 }
-addData(chart, label, data) {
-  chart.data.labels.push(label);
-  chart.data.datasets.forEach((dataset) => {
-      dataset.data.push(data);
-  });
-  chart.update();
-}
-somarresultado(){
- this.resultado = this.v1 + this.v2 + this.v3 + this.v4 + this.v5;
- console.log(this.resultado);
-}
+Atualizar(){
+  this.doughnutChart.data.datasets[0].data[0] = this.v1;
+  this.doughnutChart.data.datasets[0].data[1] = this.v2;
+  this.doughnutChart.data.datasets[0].data[2] = this.v3;
+  this.doughnutChart.data.datasets[0].data[3] = this.v4;
+  this.doughnutChart.update();
+  console.log(this.v1);
+    }
+  }
 
-
-}
