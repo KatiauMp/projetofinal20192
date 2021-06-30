@@ -15,19 +15,27 @@
 </ion-header>
 
 <ion-content class="ion-padding-horizontal">
-  <div id="caixadodespesas">
     <br>
-  <p class="p1" ><input [(ngModel)]="v1" type="number" placeholder="Telefone" ></p>
-  <p class="p1" ><input [(ngModel)]="v2" type="number" placeholder="Luz" ></p>
-  <p class="p1" ><input [(ngModel)]="v3" type="number" placeholder="Água" ></p>
-  <p class="p1" ><input [(ngModel)]="v4" type="number" placeholder="Internet" ></p>
-  <p class="p2" >O Resultado é: {{ +v1 + +v2 + +v3 + +v4 | currency : 'BRL'}}</p> 
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+    <div class="branco">
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input [(ngModel)]="v1" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Luz</ion-label>
+      <ion-input [(ngModel)]="v2" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Água</ion-label>
+      <ion-input [(ngModel)]="v3" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Internet</ion-label>
+      <ion-input [(ngModel)]="v4" type="number"></ion-input>
+    </ion-item>
+    <br>
+    </div>
+  <div class="divchart">
 <canvas class="canvas" color="black" #doughnutCanvas></canvas>
-  <div id="espaçobrancoembaixo"></div>
+</div>    
 </ion-content>

@@ -130,8 +130,6 @@ export class NewPage implements OnInit {
 
       gender: ['outro'],
 
-      origin: [''],
-
       status: ['ativo'],
 
       uid: ['']
