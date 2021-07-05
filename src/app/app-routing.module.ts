@@ -108,7 +108,11 @@ const routes: Routes = [
   },
   {
     path: 'invest',
-    loadChildren: () => import('./invest/invest.module').then( m => m.InvestPageModule)
+    loadChildren: () => import('./page/invest/invest.module').then( m => m.InvestPageModule)
+  },
+  {
+    path: 'invest',
+    loadChildren: () => import('./page/invest/invest.module').then( m => m.InvestPageModule)
   },
 ];
 

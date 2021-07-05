@@ -11,33 +11,34 @@
  text-align: center;
 }
 .p2{
+  overflow:hidden;
   font-style: italic;
-  font-size: 1.6rem;  
+  font-size: 2.8rem;  
   text-align: center;
-  background-color:azure;
-  width: 350px;
-  height: 40px;
+  background-color: #FFFFFF;
+  width: 380px;
+  height: 70px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid darkcyan;
+  border: 5px solid darkcyan;
+  margin-top: 30px;
  }
-input[type=number]{
-    width:80%;
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin:1px 0;
-    outline:none;
-    padding:8px;
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  input[type=text]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlu  ;
-  }
-
+ .divchart{
+  overflow:hidden;
+  font-style: italic;
+  font-size: 2.8rem;  
+  text-align: center;
+  background-color: #FFFFFF;
+  width: 80%;
+  height: 60%;
+  border: 5px solid darkcyan;
+  margin-top: 30px;
+  transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+ }
   .enviar1 {
     background-color: #4CAF50;
     border: none;
@@ -59,5 +60,7 @@ input[type=number]{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    
+  }
+  .branco{
+    background-color: #FFFFFF;
   }
