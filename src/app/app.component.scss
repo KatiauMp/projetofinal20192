@@ -135,15 +135,13 @@ ion-label{
 }
 //TEST
 ion-menu::part(container) {
-  border-radius: 0% 40px 20% 0%;
-  border: 3px solid grey;
-  border-left: 0 solid grey;
+  border-radius: 0% 40px 40% 0%;
   margin: 0px;
   padding: 0px;
   width: 75%;
 }
 #cifrao1{
-  border-radius: 100px;
+  height: 14rem;
 }
 .responsiveicon{
   font-size: 2rem !important;
@@ -152,11 +150,24 @@ ion-menu::part(container) {
   border: 0px !important;
 }
 #imgtop{
-  height: 12rem;
+  height: 13rem;
+  position: relative;
+  left: 9%;
+  transform: translateY(-9%);
+  width: 80%;
+  margin-bottom: 1rem;
 }
 ion-list{
   --background:none;
     background:url('/assets/icon/wallpaper1.jpg');
     background-size: cover;
     background-position: center center;
+    background: linear-gradient(270deg, #48dcec, #4776ea);
+    background-size: 400% 400%;
+    animation: animatedborder 40s ease infinite;
+}
+@keyframes animatedborder {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }

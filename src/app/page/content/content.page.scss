@@ -52,9 +52,6 @@
     cursor: pointer;
     position: center;
   }
-  ion-content{
-    --background: url('/assets/icon/0.jpg') no-repeat 100% 100%;    
-  }  
   .canvas{
     transform: translate(-50%, -50%);
     position: absolute;
@@ -64,3 +61,13 @@
   .branco{
     background-color: #FFFFFF;
   }
+#fundocolorido{
+  --background: linear-gradient(290deg, #4dabf7, #06c5e4);
+  --background-size: 400% 400%;
+  animation: animatedborder 1s ease infinite;
+}
+@keyframes animatedborder {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}

@@ -2,7 +2,9 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">  
       <ion-list class="fundoverde" id="inbox-list">
-        <div id="imgtop"></div>
+        <div id="imgtop">
+        <img src="assets/icon/controlefinanceiroicon.png" id="cifrao1" alt="Cifrão">
+        </div>
           <ion-menu-toggle id="menutoggle" auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item style="font-size: 0.8em" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
             <ion-icon slot="start" class="responsiveicon"[ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>

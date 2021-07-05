@@ -29,7 +29,7 @@ const routes: Routes = [
   // Só acessível se usuário ainda não logou
   {
     path: 'home',
-    loadChildren: () => import('./page/home/home.module').then( m => m.HomePageModule),
+    loadChildren: () => import('./page/home/home.module').then(m => m.HomePageModule),
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: isLogged }
   },
 
@@ -37,7 +37,7 @@ const routes: Routes = [
   // Só acessível se usuário ainda não logou
   {
     path: 'user/login',
-    loadChildren: () => import('./user/login/login.module').then( m => m.LoginPageModule),
+    loadChildren: () => import('./user/login/login.module').then(m => m.LoginPageModule),
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: isLogged }
   },
 
@@ -45,7 +45,7 @@ const routes: Routes = [
   // Só acessível se usuário está logado
   {
     path: 'user/logout',
-    loadChildren: () => import('./user/logout/logout.module').then( m => m.LogoutPageModule),
+    loadChildren: () => import('./user/logout/logout.module').then(m => m.LogoutPageModule),
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
@@ -53,7 +53,7 @@ const routes: Routes = [
   // Só acessível se usuário está logado
   {
     path: 'user/new',
-    loadChildren: () => import('./user/new/new.module').then( m => m.NewPageModule),
+    loadChildren: () => import('./user/new/new.module').then(m => m.NewPageModule),
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
@@ -61,7 +61,7 @@ const routes: Routes = [
   // Só acessível se usuário está logado
   {
     path: 'user/edit',
-    loadChildren: () => import('./user/edit/edit.module').then( m => m.EditPageModule),
+    loadChildren: () => import('./user/edit/edit.module').then(m => m.EditPageModule),
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
@@ -69,7 +69,7 @@ const routes: Routes = [
   // Só acessível se usuário está logado
   {
     path: 'user/profile',
-    loadChildren: () => import('./user/profile/profile.module').then( m => m.ProfilePageModule),
+    loadChildren: () => import('./user/profile/profile.module').then(m => m.ProfilePageModule),
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
@@ -77,43 +77,39 @@ const routes: Routes = [
   // Só acessível se usuário está logado
   {
     path: 'content',
-    loadChildren: () => import('./page/content/content.module').then( m => m.ContentPageModule),
+    loadChildren: () => import('./page/content/content.module').then(m => m.ContentPageModule),
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
   // Página de contatos
   // Acessível para todos
-  
+
 
   // Página sobre
   // Acessível para todos
   {
     path: 'about',
-    loadChildren: () => import('./page/about/about.module').then( m => m.AboutPageModule)
+    loadChildren: () => import('./page/about/about.module').then(m => m.AboutPageModule)
   },
 
   // Página de remoção do perfil
   // Só acessível se usuário está logado
   {
     path: 'user/delete',
-    loadChildren: () => import('./user/delete/delete.module').then( m => m.DeletePageModule),
+    loadChildren: () => import('./user/delete/delete.module').then(m => m.DeletePageModule),
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
+  },
+  {
+    path: 'invest',
+    loadChildren: () => import('./page/invest/invest.module').then(m => m.InvestPageModule)
   },
 
   // Rota curinga (Erro 404)
   // DEVE SER SEMPRE A ÚLTIMA ROTA
   {
     path: '**',
-    loadChildren: () => import('./page/e404/e404.module').then( m => m.E404PageModule)
-  },
-  {
-    path: 'invest',
-    loadChildren: () => import('./page/invest/invest.module').then( m => m.InvestPageModule)
-  },
-  {
-    path: 'invest',
-    loadChildren: () => import('./page/invest/invest.module').then( m => m.InvestPageModule)
-  },
+    loadChildren: () => import('./page/e404/e404.module').then(m => m.E404PageModule)
+  }
 ];
 
 @NgModule({
@@ -122,4 +118,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

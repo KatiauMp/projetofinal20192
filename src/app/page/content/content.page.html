@@ -1,20 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    
     <ion-title>Despesas</ion-title>
-
     <ion-thumbnail class="ion-margin-end" slot="end" *ngIf="auth.user | async as user">
       <img routerLink="/user/profile" src="{{ user.photoURL }}" alt="{{ user.displayName }}">
     </ion-thumbnail>
-
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding-horizontal">
+<ion-content id="fundocolorido" class="ion-padding-horizontal ">
     <br>
     <div class="branco">
     <ion-item>
