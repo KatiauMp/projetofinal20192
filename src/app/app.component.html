@@ -2,7 +2,7 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">  
       <ion-list class="fundoverde" id="inbox-list">
-        <ion-img class="ion-no-margin ion-no-padding" id="cifrao1" src="assets/icon/barraazul.png"></ion-img>
+        <div id="imgtop"></div>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item style="font-size: 0.8em" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" class="responsiveicon"[ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
@@ -10,17 +10,6 @@
             </ion-item>
           </ion-menu-toggle>
           <ion-list class="list1" *ngIf="auth.user | async as user">
-            <ion-menu-toggle class="photurlmenu" auto-hide="false">
-              <ion-item class="photurlmenu" routerLink="/user/profile">
-                <ion-thumbnail class="photurlmenu" slot="start" class="ion-no-margin ion-no-padding">
-                  <img class="photourlmenu" src="{{user.photoURL}}" alt="user.displayName">
-                </ion-thumbnail>
-                <ion-label class="photourlmenu">
-                  <h2>{{user.displayName}}</h2>
-                  <small >{{user.email}}</small>
-                </ion-label>
-              </ion-item>
-            </ion-menu-toggle>
           </ion-list>
         </ion-list>
     </ion-menu>

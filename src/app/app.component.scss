@@ -95,7 +95,6 @@ ion-menu.ios ion-item ion-icon {
 ion-menu.ios ion-list#labels-list ion-list-header {
   margin-bottom: 8px;
 }
-
 ion-menu.ios ion-list-header,
 ion-menu.ios ion-note {
   padding-left: 16px;
@@ -116,14 +115,10 @@ ion-item.selected {
   --color: var(--ion-color-primary);
 }
 //CUSTOMIZADO DAQUI PARA BAIXO
-#inbox-list{
-  border-left: 3px solid grey;
-}
+
 .list1{
-  border-top: 0.5rem solid grey;
-  border-bottom: 0.5rem solid grey;
   background-color: lightblue;
-  height: 10rem;
+  height: 20rem;
   margin: 0;
   padding: 0;
 }
@@ -134,13 +129,14 @@ ion-thumbnail{
   height: 3rem;
 }
 ion-label{
+  border-top: 10px;
   margin: 1rem;
   margin-bottom: 2.3rem !important;
 }
 //TEST
 ion-menu::part(container) {
-  border-radius: 0% 75px 20% 0%;
-  border: 20px solid grey;
+  border-radius: 0% 40px 20% 0%;
+  border: 3px solid grey;
   border-left: 0 solid grey;
   margin: 0px;
   padding: 0px;
@@ -148,14 +144,19 @@ ion-menu::part(container) {
 }
 #cifrao1{
   border-radius: 100px;
-
 }
 .responsiveicon{
   font-size: 2rem !important;
 }
-.fundoverde{
-  background-color: green !important;
-}
 .menuinner{
   border: 0px !important;
+}
+#imgtop{
+  height: 12rem;
+}
+ion-list{
+  --background:none;
+    background:url('/assets/icon/wallpaper1.jpg');
+    background-size: cover;
+    background-position: center center;
 }
