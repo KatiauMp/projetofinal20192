@@ -109,6 +109,10 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./page/e404/e404.module').then(m => m.E404PageModule)
+  },
+  {
+    path: 'contato',
+    loadChildren: () => import('./page/contato/contato.module').then( m => m.ContatoPageModule)
   }
 ];
 

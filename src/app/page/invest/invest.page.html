@@ -3,10 +3,33 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Sobre</ion-title>
+    <ion-title>Investimentos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h1>testando</h1>
+<ion-content id="fundocolorido" class="ion-padding-horizontal ">
+  <br>
+  <div class="branco">
+  <ion-item>
+    <ion-label position="floating">Renda Fixa</ion-label>
+    <ion-input [(ngModel)]="v1" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Luz</ion-label>
+    <ion-input [(ngModel)]="v2" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Água</ion-label>
+    <ion-input [(ngModel)]="v3" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Internet</ion-label>
+    <ion-input [(ngModel)]="v4" type="number"></ion-input>
+  </ion-item>
+  <br>
+  </div>
+<div class="divchart">
+<canvas class="canvas" color="black" #lineCanvas></canvas>
+</div>    
+
 </ion-content>
