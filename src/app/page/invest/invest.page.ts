@@ -50,24 +50,12 @@ export class InvestPage implements OnInit {
 
 lineChartMethod() {
   this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-    type: 'bar',
+    type: 'line',
     data: {
       labels: ['Alimentação', 'Luz', 'Água', 'Internet'],
       datasets: [{
         label: '# of Votes',
         data: [ this.v1, this.v2, this.v3, this.v4],
-        backgroundColor: [
-          'rgba(20, 100, 100, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-        ],
-        hoverBackgroundColor: [
-          '#FFCE56',
-          '#FF6384',
-          '#36A2EB',
-          '#FFCE56',
-        ]
       }]
     }
   });

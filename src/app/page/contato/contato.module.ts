@@ -8,12 +8,16 @@ import { ContatoPageRoutingModule } from './contato-routing.module';
 
 import { ContatoPage } from './contato.page';
 
+// 1) Importa módulo de formulários reativos do Angular
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ContatoPageRoutingModule
+    ContatoPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [ContatoPage]
 })

@@ -103,16 +103,16 @@ const routes: Routes = [
     path: 'invest',
     loadChildren: () => import('./page/invest/invest.module').then(m => m.InvestPageModule)
   },
+  {
+    path: 'contato',
+    loadChildren: () => import('./page/contato/contato.module').then( m => m.ContatoPageModule)
+  },
 
   // Rota curinga (Erro 404)
   // DEVE SER SEMPRE A ÚLTIMA ROTA
   {
     path: '**',
     loadChildren: () => import('./page/e404/e404.module').then(m => m.E404PageModule)
-  },
-  {
-    path: 'contato',
-    loadChildren: () => import('./page/contato/contato.module').then( m => m.ContatoPageModule)
   }
 ];
 
