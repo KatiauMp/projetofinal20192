@@ -19,10 +19,10 @@ import { interval } from 'rxjs';
 })
 export class ContentPage implements OnInit {
 
-  v1: number;
-  v2: number;
-  v3: number;
-  v4: number;
+  v1: any = "";
+  v2: any = ""; 
+  v3: any = "";
+  v4: any = "";
 
   @ViewChild('doughnutCanvas') private doughnutCanvas: ElementRef;
 
@@ -72,10 +72,10 @@ doughnutChartMethod() {
   });
 }
 Atualizar(){
-  this.doughnutChart.data.datasets[0].data[0] = this.v1;
-  this.doughnutChart.data.datasets[0].data[1] = this.v2;
-  this.doughnutChart.data.datasets[0].data[2] = this.v3;
-  this.doughnutChart.data.datasets[0].data[3] = this.v4;
+  this.doughnutChart.data.datasets[0].data[0] = parseFloat(this.v1.replace(",","."));
+  this.doughnutChart.data.datasets[0].data[1] = parseFloat(this.v2.replace(",","."));
+  this.doughnutChart.data.datasets[0].data[2] = parseFloat(this.v3.replace(",","."));
+  this.doughnutChart.data.datasets[0].data[3] = parseFloat(this.v4.replace(",","."));
   this.doughnutChart.update();
   console.log(this.v1);
     }

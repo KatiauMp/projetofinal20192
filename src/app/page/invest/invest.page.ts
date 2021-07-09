@@ -19,9 +19,9 @@ import { interval } from 'rxjs';
 })
 export class InvestPage implements OnInit {
 
-  v: number;
-  m: number;
-  p: number;
+  v: any ="0";
+  m: any ="0";
+  p: any ="0";
 
   @ViewChild('lineCanvas') private lineCanvas: ElementRef;
   lineChart: Chart;
@@ -47,15 +47,20 @@ lineChartMethod() {
       labels: ['Valor Inicial', 'Valor Final'],
       datasets: [{
         label: 'Investimento',
-        data: [ this.v, this.v],
-        pointBackgroundColor: 'rgb(75, 192, 192)',
+        data: [ parseFloat(this.v.replace(',', '.')), parseFloat(this.v.replace(',', '.'))],
       }]
     }
   });
 }
 atualizar(){
-  this.lineChart.data.datasets[0].data[0] = this.v;
-  this.lineChart.data.datasets[0].data[1] = this.v * ( 1 + this.p/100) * this.m;
+
+  var vx1 = parseFloat(this.v.replace(',', '.'));
+  var px1 = parseFloat(this.p.replace(',', '.'));
+  var mx1 = parseFloat(this.m.replace(',', '.'));
+
+  var vx = vx1 * (1 + px1/100) * mx1;
+  this.lineChart.data.datasets[0].data[0] = vx1;
+  this.lineChart.data.datasets[0].data[1] = vx;
   this.lineChart.update();
   console.log(this.v);
   }

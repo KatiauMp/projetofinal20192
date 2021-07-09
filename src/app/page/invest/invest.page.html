@@ -13,15 +13,15 @@
     <h1>Juros Compostos</h1>
   <ion-item>
     <ion-label position="floating">Valor</ion-label>
-    <ion-input [(ngModel)]="v" type="number"></ion-input>
+    <ion-input [(ngModel)]="v" placeholder="(R$) Real" [brmasker]="{money: true}"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Meses</ion-label>
-    <ion-input [(ngModel)]="m" type="number"></ion-input>
+    <ion-input [(ngModel)]="m" placeholder="Meses"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Percentual</ion-label>
-    <ion-input [(ngModel)]="p" type="number"></ion-input>
+    <ion-input [(ngModel)]="p" placeholder="Porcentagem" [brmasker]="{money: true}"></ion-input>
   </ion-item>
   <br>
   </div>
