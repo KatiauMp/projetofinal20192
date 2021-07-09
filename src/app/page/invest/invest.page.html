@@ -7,29 +7,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content id="fundocolorido" class="ion-padding-horizontal ">
+<ion-content id="fundocolorido" class="ion-padding-horizontal">
   <br>
   <div class="branco">
+    <h1>Juros Compostos</h1>
   <ion-item>
-    <ion-label position="floating"></ion-label>
-    <ion-input [(ngModel)]="v1" type="date"></ion-input>
+    <ion-label position="floating">Valor</ion-label>
+    <ion-input [(ngModel)]="v" type="number"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="floating"></ion-label>
-    <ion-input [(ngModel)]="v2" type="date"></ion-input>
+    <ion-label position="floating">Meses</ion-label>
+    <ion-input [(ngModel)]="m" type="number"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Percentual</ion-label>
-    <ion-input [(ngModel)]="v3" type="number"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Valor</ion-label>
-    <ion-input [(ngModel)]="v4" type="number"></ion-input>
+    <ion-input [(ngModel)]="p" type="number"></ion-input>
   </ion-item>
   <br>
   </div>
 <div class="divchart">
 <canvas class="canvas" color="black" #lineCanvas></canvas>
-</div>    
-
+</div>   
 </ion-content>

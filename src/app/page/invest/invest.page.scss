@@ -1,5 +1,32 @@
-#fundocolorido{
+  #fundocolorido{
     --background: linear-gradient(290deg, #4dabf7, #06c5e4);
     --background-size: 400% 400%;
     animation: animatedborder 1s ease infinite;
+  }
+  .divchart{
+    overflow:hidden;
+    font-style: italic;
+    font-size: 2.8rem;  
+    text-align: center;
+    background-color: #FFFFFF;
+    width: 95%;
+    height: 30%;
+    border: 5px solid darkcyan;
+    margin-top: 30px;
+    transform: translate(-50%, -50%);
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+   }
+   .divsuperior{
+    font-style: italic;
+    font-size: 2.8rem;  
+    text-align: center;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 30%;  
+   }
+   .branco{
+    background-color: #FFFFFF;
+    text-align: center;
   }

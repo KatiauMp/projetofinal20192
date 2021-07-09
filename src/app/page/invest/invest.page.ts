@@ -12,7 +12,6 @@ Chart.register(...registerables);
 import { interval } from 'rxjs';
 //rxjs
 
-
 @Component({
   selector: 'app-invest',
   templateUrl: './invest.page.html',
@@ -20,17 +19,13 @@ import { interval } from 'rxjs';
 })
 export class InvestPage implements OnInit {
 
-  v1: number;
-  v2: number;
-  v3: number;
-  v4: number;
+  v: number;
+  m: number;
+  p: number;
 
   @ViewChild('lineCanvas') private lineCanvas: ElementRef;
-
-  
   lineChart: Chart;
   
-
   constructor(
     public auth: AngularFireAuth,
     private menuCtrl: MenuController
@@ -38,34 +33,30 @@ export class InvestPage implements OnInit {
   ngAfterViewInit() {
     this.lineChartMethod();  
   }
-
   ngOnInit() {
   this.menuCtrl.enable(true);   
   interval(1000).subscribe(x => {
-  this.Atualizar();
+  this.atualizar();
 });
   }
-
 // Charts(Gráficos)
-
 lineChartMethod() {
   this.lineChart = new Chart(this.lineCanvas.nativeElement, {
     type: 'line',
     data: {
-      labels: ['Alimentação', 'Luz', 'Água', 'Internet'],
+      labels: ['Valor Inicial', 'Valor Final'],
       datasets: [{
-        label: '# of Votes',
-        data: [ this.v1, this.v2, this.v3, this.v4],
+        label: 'Investimento',
+        data: [ this.v, this.v],
+        pointBackgroundColor: 'rgb(75, 192, 192)',
       }]
     }
   });
 }
-Atualizar(){
-  this.lineChart.data.datasets[0].data[0] = this.v1;
-  this.lineChart.data.datasets[0].data[1] = this.v2;
-  this.lineChart.data.datasets[0].data[2] = this.v3;
-  this.lineChart.data.datasets[0].data[3] = this.v4;
+atualizar(){
+  this.lineChart.data.datasets[0].data[0] = this.v;
+  this.lineChart.data.datasets[0].data[1] = this.v * ( 1 + this.p/100) * this.m;
   this.lineChart.update();
-  console.log(this.v1);
-    }
+  console.log(this.v);
+  }
 }

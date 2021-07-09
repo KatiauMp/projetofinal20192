@@ -80,4 +80,3 @@ Atualizar(){
   console.log(this.v1);
     }
   }
-
